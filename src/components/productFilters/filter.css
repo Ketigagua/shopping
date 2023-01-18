@@ -1,0 +1,8 @@
+.filter {
+  width: 200px;
+  height: 250px;
+  display: grid;
+  padding: 10px;
+  border-radius: 8px;
+  opacity: 0.9;
+}

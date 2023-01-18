@@ -1,0 +1,101 @@
+:root {
+  --color-grey-primary: #f0f0f0;
+  --color-white: #fff;
+  --color-grey-secondary: #adb5bd;
+  --color-yellow-primary: rgb(231, 154, 20);
+  --color-yellow-primary: rgb(196, 130, 16);
+  --color-green-primary: rgb(17, 172, 86);
+  --color--navbar: #31302ad6;
+  --color-light-background: linear-gradient(
+    to right,
+    #8b8a8530 8%,
+    #7d796c66 50%,
+    rgba(127, 120, 114, 0.138) 100%
+  );
+  --color--card-primary: linear-gradient(
+    to right,
+    #411e0281 8%,
+    #4b3d199c 50%,
+    rgba(116, 60, 4, 0.34) 100%
+  );
+  --color--card-secondary: linear-gradient(
+    to right,
+    #171513dc 8%,
+    #31302ad6 50%,
+    rgba(30, 28, 26, 0.829) 100%
+  );
+  --color--primay-btn: linear-gradient(
+    to right,
+    #f9f5f281 8%,
+    #f7f5ef32 50%,
+    rgba(247, 126, 5, 0.985) 100%
+  );
+}
+
+.products {
+  display: grid;
+}
+.products__container {
+  background-color: var(--color-white);
+  box-shadow: 2px 3px 7px var(--color-grey-primary);
+  padding: 23px;
+}
+
+.productList {
+  max-width: 750px;
+  max-height: 500px;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 45% 45%;
+  row-gap: 18px;
+}
+
+.productCard {
+  position: relative;
+  display: grid;
+  grid-template-rows: 65% 35%;
+  background-color: var(--color-white);
+  margin: 0 16px;
+  flex: 1 0 100px;
+  max-width: 450px;
+  max-height: 400px;
+  transition: 0.2s;
+  border: 3px solid var(--color-grey-primary);
+  border-radius: 20px;
+}
+
+.productCard:hover {
+  transform: translateY(0.5rem);
+  box-shadow: 0.5rem 0.1rem 1rem #bbbbbb;
+}
+.products__pagination {
+  display: grid;
+  grid-column-start: 2;
+  padding-top: 10px;
+}
+.btn {
+  max-width: 90px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-top: 10px;
+  padding: 15px;
+  box-shadow: 0 0 5px rgb(200, 190, 190);
+  border-radius: 5px;
+  background-image: var(--color-grey-primary);
+  color: var(--color-grey-primary);
+  color: var(--color-yellow-primary);
+}
+.btn:hover {
+  color: var(--color-grey-secondary);
+}
+.product__price {
+  justify-content: left;
+}
+.product__filter {
+  justify-content: center;
+}
+.product__pagination {
+  justify-content: center;
+}

@@ -1,0 +1,50 @@
+header {
+  background-color: var(--color--navbar);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 70px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  box-shadow: 0 0 15px 0 #000;
+}
+header * {
+  display: flex;
+}
+header li {
+  margin: 20px;
+}
+header li a {
+  color: var(--color-white);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+header li a:hover {
+  color: #fff;
+  border-bottom: 1px solid grey;
+}
+
+.nav__btn {
+  display: flex;
+  align-items: center;
+  padding: 3px 15px;
+  background-image: var(--color--card-primary);
+  color: var(--color-grey-primary);
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  border: none;
+  color: #ffffff;
+  box-shadow: 0 0 20px rgb(125, 120, 120);
+  border-radius: 10px;
+  display: block;
+  cursor: pointer;
+}
+.nav__btn:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}

@@ -1,0 +1,11 @@
+{
+  "images": {
+    "id": 1,
+
+    "photos": [
+      "shopping/src/pages/home/carouselMedia/1.jpg",
+      "shopping/src/pages/home/carouselMedia/2.jpg",
+      "shopping/src/pages/home/carouselMedia/3.jpg"
+    ]
+  }
+}
