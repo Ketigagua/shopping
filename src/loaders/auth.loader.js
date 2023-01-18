@@ -9,7 +9,7 @@ export const authRoutesLoader = () => {
   const now = Date.now() / 1000;
 
   if (exp && exp > now) {
-    return redirect("/member/dashboard");
+    return redirect("/");
   }
 
   return null;

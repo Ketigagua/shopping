@@ -23,9 +23,11 @@ export const Products = () => {
   const [data, dispatch] = useReducer(Productreducer, initialValue);
   const { page, limit, ordering, maxPrice, minPrice, products } = data;
   const totalpages = Math.ceil(totalItems / limit);
+
   useEffect(() => {
     getProducts(page, limit, ordering, maxPrice, minPrice);
   }, [page, limit, ordering, maxPrice, minPrice]);
+
   const getProducts = async (
     nextPage,
     nextLimit,
