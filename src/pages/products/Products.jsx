@@ -6,6 +6,7 @@ import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 import { ProductCart } from "../../components/productCart/ProductCard";
 import { fetchProduct } from "../../services/Product.service";
+import { Cart } from "../shoppingCart/Cart";
 import "./Products.css";
 import { ProductFilter } from "../../components/productFilters/ProductFilter";
 import { Productreducer } from "./reducer/productReducer";
@@ -21,7 +22,8 @@ const totalItems = 20;
 
 export const Products = () => {
   const [data, dispatch] = useReducer(Productreducer, initialValue);
-  const { page, limit, ordering, maxPrice, minPrice, products } = data;
+  const { page, limit, ordering, maxPrice, minPrice, products, description } =
+    data;
   const totalpages = Math.ceil(totalItems / limit);
 
   useEffect(() => {
@@ -82,6 +84,7 @@ export const Products = () => {
           {products?.map((item) => (
             <div item key={item.id} className="productCard">
               <ProductCart {...item} />
+              {/* <Cart {...item} /> */}
             </div>
           ))}
         </Grid>

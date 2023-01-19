@@ -1,12 +1,12 @@
 header {
-  background-color: var(--color--navbar);
+  background-color: #03313c;
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
   height: 70px;
   display: flex;
-  justify-content: right;
+  justify-content: space-around;
   align-items: center;
   box-shadow: 0 0 15px 0 #000;
 }
@@ -23,28 +23,33 @@ header li a {
 }
 header li a:hover {
   color: #fff;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid orange;
 }
-
-.nav__btn {
+nav {
+  align-items: center;
+  margin-right: 60px;
+}
+.nav__logo {
+  height: 40px;
+  width: 50px;
+}
+.person {
+  color: orange;
+}
+.person p {
+  margin-left: 10px;
+}
+.icon {
+  width: 20px;
+  height: 20px;
+}
+.logout {
   display: flex;
   align-items: center;
-  padding: 3px 15px;
-  background-image: var(--color--card-primary);
-  color: var(--color-grey-primary);
-  text-align: center;
+
   text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  border: none;
-  color: #ffffff;
-  box-shadow: 0 0 20px rgb(125, 120, 120);
-  border-radius: 10px;
-  display: block;
-  cursor: pointer;
-}
-.nav__btn:hover {
-  background-position: right center;
-  color: #fff;
-  text-decoration: none;
+  font-size: 14px;
+  color: orange;
+  margin-right: 60px;
+  padding-bottom: 10px;
 }

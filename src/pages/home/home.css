@@ -1,5 +1,5 @@
 .home {
   display: grid;
   height: 100vh;
-  background-image: var(--color-light-background);
+  background-image: white;
 }

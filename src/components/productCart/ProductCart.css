@@ -8,7 +8,7 @@
 }
 .productCard__content {
   padding-left: 8px;
-  background-image: var(--color--card-primary);
+  background-color: #03313c;
   border-radius: 3px 25px 10px 10px;
   color: #fff;
 }
@@ -22,12 +22,7 @@
   max-width: 70px;
   height: 32px;
 
-  background-image: linear-gradient(
-    to right,
-    #120f0334 0%,
-    #795416 51%,
-    hsla(33, 38%, 38%, 0.32) 100%
-  );
+  background-color: #59d4d700;
   margin: 4px;
   padding: 5px;
   text-align: center;

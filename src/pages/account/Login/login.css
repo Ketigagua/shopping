@@ -1,0 +1,12 @@
+.aside {
+  background-image: url(../../../assets/carouselMedia/2.jpg);
+}
+.login__btn {
+  width: 120px;
+  padding: 10px 23px;
+  border-radius: 6px;
+  background-color: var(--color-white);
+  border: none;
+  box-shadow: 1px 1px 15px rgb(156, 151, 151);
+  cursor: pointer;
+}

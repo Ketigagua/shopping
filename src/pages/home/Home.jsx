@@ -4,6 +4,7 @@ import { Products } from "../products/Products";
 
 import "./home.css";
 import { Carousel } from "./Carousel";
+import { NavLayout } from "../../components/navbar/navlayout/Navlayout";
 import { Navigation } from "../../components/navbar/Navbar";
 
 export const Home = () => {
@@ -11,6 +12,7 @@ export const Home = () => {
     <div className="home">
       <Navigation />
       <Products />
+      <NavLayout />
     </div>
   );
 };

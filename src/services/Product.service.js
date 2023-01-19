@@ -17,11 +17,11 @@ export const fetchProduct = async (
   if (minValue) {
     url += `&price_gte=${minValue}`;
   }
+  const token = localStorage.getItem("authToken");
 
   const response = await fetch(url, {
     headers: {
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvbkB0ZXN0LmNvbSIsImlhdCI6MTY3NDA1ODM5NCwiZXhwIjoxNjc0MDYxOTk0LCJzdWIiOiIxIn0.CJMeli61mL6KmvmGcJPj_3qZ9J072vcPqleb_NzGwb4",
+      Authorization: `Bearer ${token}`,
     },
   });
 
