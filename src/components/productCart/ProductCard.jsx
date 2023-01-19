@@ -12,11 +12,11 @@ export const ProductCart = (props) => {
   const handleSubmit = async () => {
     const token = localStorage.getItem("authToken");
     // console.log(userId, "add", productId);
-    const userId = 1;
     const data = await fetch("http://localhost:8000/carts", {
       method: "POST",
-      header: {
+      headers: {
         Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         productId: id,

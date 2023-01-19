@@ -23,6 +23,12 @@
       "password": "$2a$10$mfzXcZgIPwYgwimNNEU11uivI1anu7.2QGKi4gOja5VvYyuYJ.W.O",
       "name": "keti",
       "id": 4
+    },
+    {
+      "email": "lasha@commschool.com",
+      "password": "$2a$10$a4llJNz6dAdeDfA93ZblA.mpCLAxQoYzJgLl0lIBTUiYNrn7fSBoC",
+      "name": "Lasha",
+      "id": 5
     }
   ],
   "products": [
@@ -487,6 +493,26 @@
       "productId": 2,
       "userId": 4,
       "id": 43
+    },
+    {
+      "productId": 3,
+      "userId": "5",
+      "id": 45
+    },
+    {
+      "productId": 2,
+      "userId": "5",
+      "id": 46
+    },
+    {
+      "productId": 20,
+      "userId": "5",
+      "id": 48
+    },
+    {
+      "productId": 20,
+      "userId": "5",
+      "id": 49
     }
   ]
 }
