@@ -29,6 +29,12 @@
       "password": "$2a$10$a4llJNz6dAdeDfA93ZblA.mpCLAxQoYzJgLl0lIBTUiYNrn7fSBoC",
       "name": "Lasha",
       "id": 5
+    },
+    {
+      "email": "keti@gmail.com",
+      "password": "$2a$10$pBwo6qZi2cqVx8juhNqFjeOs1LG.a/Kz.ZJJFHolLsKEFjZ.aAYku",
+      "name": "keti",
+      "id": 6
     }
   ],
   "products": [
@@ -485,16 +491,6 @@
       "id": 41
     },
     {
-      "productId": 2,
-      "userId": 4,
-      "id": 42
-    },
-    {
-      "productId": 2,
-      "userId": 4,
-      "id": 43
-    },
-    {
       "productId": 3,
       "userId": "5",
       "id": 45
@@ -513,6 +509,21 @@
       "productId": 20,
       "userId": "5",
       "id": 49
+    },
+    {
+      "productId": 20,
+      "userId": "4",
+      "id": 50
+    },
+    {
+      "productId": 3,
+      "userId": "4",
+      "id": 51
+    },
+    {
+      "productId": 4,
+      "userId": "4",
+      "id": 52
     }
   ]
 }

@@ -2,32 +2,29 @@ import React from "react";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import PersonIcon from "@mui/icons-material/Person";
-import Form from "react-bootstrap/Form";
+import { SearchProduct } from "../search/UseCallback";
 import logo from "./logo.PNG";
 import { Link } from "react-router-dom";
-
 import "./navbar.css";
-export const Navigation = (props) => {
-  const { onLogOut } = props;
 
+export const NavBar = (props) => {
+  const { onLogOut } = props;
   return (
     <>
       <header>
         <div className="nav__logo">
           <Link to="/products">
-            <img src={logo} />
+            <img src={logo} alt={logo} />
           </Link>
         </div>
         <nav>
-          <ul>
+          <ul className="nav__item">
             <li>
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-              />
+              <div className="searchBar">
+                <SearchProduct />
+              </div>
             </li>
+
             <li>
               <Link to="/Products">Products</Link>
             </li>
@@ -45,7 +42,6 @@ export const Navigation = (props) => {
             <PersonIcon fontSize="large" />
 
             <NavDropdown.Divider />
-            <button onClick={onLogOut}>Logout</button>
 
             <NavDropdown.Item onClick={onLogOut}>Log Out</NavDropdown.Item>
           </NavDropdown>

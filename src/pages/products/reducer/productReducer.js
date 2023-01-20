@@ -26,7 +26,7 @@ export const Productreducer = (data = initialValue, action) => {
         ordering: action.payload,
       };
     }
-    case "SET_Filter": {
+    case "SET_FILTER": {
       return {
         ...data,
         maxPrice: action.payload.maxPrice,

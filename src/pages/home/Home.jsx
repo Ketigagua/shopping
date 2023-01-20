@@ -1,16 +1,13 @@
-import React, { useState } from "react";
-// import { Slider } from "./Carousel";
+import React from "react";
 import { Products } from "../products/Products";
-
 import "./home.css";
-import { Carousel } from "./Carousel";
 import { NavLayout } from "../../components/navbar/navlayout/Navlayout";
-import { Navigation } from "../../components/navbar/Navbar";
+import { NavBar } from "../../components/navbar/Navbar";
 
 export const Home = () => {
   return (
     <div className="home">
-      <Navigation />
+      <NavBar />
       <Products />
       <NavLayout />
     </div>

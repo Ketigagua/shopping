@@ -45,6 +45,18 @@ export const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!email) {
+      alert("Email is required");
+      return;
+    }
+    if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+      alert("Invalid email format");
+      return;
+    }
+    if (!password) {
+      alert("Password is required");
+      return;
+    }
 
     const response = await fetch("http://localhost:8000/login", {
       method: "POST",

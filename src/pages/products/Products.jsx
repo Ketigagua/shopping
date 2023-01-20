@@ -18,13 +18,11 @@ import {
 } from "./reducer/productconstants";
 import { initialValue } from "./products.props";
 
-const totalItems = 20;
-
 export const Products = () => {
   const [data, dispatch] = useReducer(Productreducer, initialValue);
   const { page, limit, ordering, maxPrice, minPrice, products, description } =
     data;
-  const totalpages = Math.ceil(totalItems / limit);
+  const totalpages = Math.ceil(data.products.length / 6);
 
   useEffect(() => {
     getProducts(page, limit, ordering, maxPrice, minPrice);
@@ -32,7 +30,7 @@ export const Products = () => {
 
   const getProducts = async (
     nextPage,
-    nextLimit,
+    nextLimit = 6,
     nextOrder,
     maxValue,
     minValue
@@ -54,7 +52,7 @@ export const Products = () => {
       type: SET_PAGE,
       payload: nextPage,
     });
-    getProducts(nextPage, limit, ordering);
+    getProducts(nextPage, 6, ordering);
   };
   const handleSortProducts = () => {
     const newOrder = ordering === "asc" ? "desc" : "asc";
@@ -107,11 +105,7 @@ export const Products = () => {
           </button>
         </Grid>
         <Grid container item xs={12} className="product__pagination">
-          <Pagination
-            count={limit}
-            page={totalpages}
-            onChange={handlePaginationChange}
-          />
+          <Pagination count={6} page={1} onChange={handlePaginationChange} />
         </Grid>
       </Grid>
     </div>

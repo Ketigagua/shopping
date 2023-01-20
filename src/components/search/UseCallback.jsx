@@ -1,31 +1,70 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 import debounce from "lodash/debounce";
 import { useEffect } from "react";
-import axios from "../../services/Api";
+import { SearchOutlined } from "@ant-design/icons";
+import "./search.css";
 
-const apiUrl = "axios";
+const apiUrl = "http://localhost:8000";
 
-const UseCallback = () => {
+export const SearchProduct = () => {
   const [name, setName] = useState("");
-  const [products, setProducts] = useState(null);
+  const [products, setProducts] = useState([]);
 
-  const debouncedSearch = debounce(async (name) => {
-    let query = `${apiUrl}/products`;
-    if (name) {
-      query += `?q=${name}`;
+  const memoizedProducts = useMemo(() => products, [products]);
+
+  const search = debounce(async (name) => {
+    if (!name) {
+      setProducts([]);
+      return;
     }
-    const response = await fetch(query);
+
+    let query = `${apiUrl}/products?q=${name}`;
+    const token = localStorage.getItem("authToken");
+
+    const response = await fetch(query, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(),
+    });
     const data = await response.json();
 
     setProducts(data);
   }, 400);
-  const search = useCallback(debouncedSearch, []);
 
   useEffect(() => {
-    debouncedSearch(name);
+    search(name);
   }, [name]);
 
-  return <>{products?.map(item)=(
-    <div key={item.id}>{item.title}</div>
-  )}</>;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    search(name);
+  };
+
+  return (
+    <>
+      <form onSubmit={handleSubmit}>
+        <input
+          className="search"
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <div className="search__btn">
+          <button type="submit" className="sub__btn">
+            <SearchOutlined style={{ fontSize: "16px" }} />
+          </button>
+        </div>
+        {memoizedProducts?.map((item) => (
+          <div className="search">
+            <div key={item.id} className="Searched__result">
+              {item.title}
+            </div>
+          </div>
+        ))}
+      </form>
+    </>
+  );
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import { Navigation } from "../Navbar";
+import { NavBar } from "../Navbar";
 
 export const NavLayout = () => {
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ export const NavLayout = () => {
 
   return (
     <div className="navlayout">
-      <Navigation onLogOut={handleLogout} />
+      <NavBar onLogOut={handleLogout} />
       <Outlet />
     </div>
   );

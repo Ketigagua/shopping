@@ -29,6 +29,9 @@ nav {
   align-items: center;
   margin-right: 60px;
 }
+.nav__item {
+  align-items: center;
+}
 .nav__logo {
   height: 40px;
   width: 50px;
@@ -52,4 +55,21 @@ nav {
   color: orange;
   margin-right: 60px;
   padding-bottom: 10px;
+}
+.searchBar {
+  width: 300px;
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+.searchBar:hover {
+  box-shadow: 0 0 5px #fff;
+}
+.searchBar input {
+  overflow: hidden;
+  border: none;
+  width: 250px;
+}
+.searchBar:active {
+  border: none;
 }

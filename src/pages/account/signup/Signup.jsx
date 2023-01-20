@@ -15,6 +15,10 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
+const ErrorMessage = ({ error }) => {
+  return <div style={{ color: "red" }}>{error}</div>;
+};
+
 function Copyright(props) {
   return (
     <Typography
@@ -38,10 +42,60 @@ export const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+  });
   const navigate = useNavigate();
+  const validateFullName = (name) => {
+    if (name.length === 0) {
+      setErrors((prevState) => ({
+        ...prevState,
+        fullName: "Full name must consist of at least one character",
+      }));
+      return false;
+    }
+    setErrors((prevState) => ({ ...prevState, fullName: "" }));
+    return true;
+  };
+
+  const validateEmail = (email) => {
+    const emailRegex =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (!emailRegex.test(email)) {
+      setErrors((prevState) => ({
+        ...prevState,
+        email: "Email must be valid",
+      }));
+      return false;
+    }
+    setErrors((prevState) => ({ ...prevState, email: "" }));
+    return true;
+  };
+
+  const validatePassword = (password) => {
+    if (password.length < 6) {
+      setErrors((prevState) => ({
+        ...prevState,
+        password: "Password must consist of at least 6 characters",
+      }));
+      return false;
+    }
+    setErrors((prevState) => ({ ...prevState, password: "" }));
+    return true;
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (
+      !validateFullName(name) ||
+      !validateEmail(email) ||
+      !validatePassword(password)
+    ) {
+      return;
+    }
 
     const response = await fetch("http://localhost:8000/register", {
       method: "POST",
@@ -98,6 +152,7 @@ export const Signup = () => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   autoFocus
+                  error={errors.fullName !== ""}
                 />
               </Grid>
 
@@ -111,6 +166,7 @@ export const Signup = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   autoComplete="email"
+                  error={errors.fullName !== ""}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -122,6 +178,7 @@ export const Signup = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   autoComplete="new-password"
+                  error={errors.fullName !== ""}
                 />
               </Grid>
               <Grid item xs={12}>
